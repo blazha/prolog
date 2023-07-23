@@ -1,15 +1,30 @@
-from typing import Union
+from fastapi import Depends, FastAPI
+from sqlalchemy.orm import Session
 
-from fastapi import FastAPI
+import crud, models, schemas
+from database import SessionLocal, engine 
+
+import pdb
+
+models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
+
+
+# Dependency
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
 
 
 @app.get("/")
 def read_root():
     return {"Hello": "World"}
 
-
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
+@app.get("/forewords", response_model=list[schemas.Foreword])
+def read_forewords(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    forewords = crud.get_forewords(db, skip=skip, limit=limit)
+    return forewords

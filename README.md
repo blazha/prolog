@@ -1,6 +1,6 @@
 ### Website Ohridski prolog po delu Vladike Nikolaja Velimirovica:
 - FE: React
-- BE: FastAPI, MySQL
+- BE: FastAPI, SQLite
 - cheap domain and hosting
 - deploy all apps on one server
 - use subdomains or nginx routing
