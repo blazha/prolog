@@ -11,7 +11,14 @@
     - pogovor i blagodarnost od oca Nikolaja
 
 ### Run on development enviroment:
+#### Client app
 - template created with `npx create-next-app`
 - `cd app`
 - `npm i`
 - `npm run dev`
+
+#### API
+- `cd api`
+- `source venv/bin/activate`
+- `pip install -r requirements.txt`
+- `uvicorn main:app --reload`
