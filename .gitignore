@@ -9,7 +9,7 @@ app/node_modules
 /coverage
 
 # next.js
-/.next/
+app/.next/
 /out/
 
 # production
@@ -32,4 +32,4 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
+app/next-env.d.ts
