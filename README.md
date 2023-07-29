@@ -18,7 +18,7 @@
 - `npm run dev`
 
 #### API
+- `source .venv/bin/activate`
+- `pip install -r api/requirements.txt`
 - `cd api`
-- `source venv/bin/activate`
-- `pip install -r requirements.txt`
 - `uvicorn main:app --reload`

@@ -35,7 +35,7 @@ yarn-error.log*
 app/next-env.d.ts
 
 # python virtual enviroment
-api/venv
+.venv
 api/__pycache__
 
 # SQLite db file
