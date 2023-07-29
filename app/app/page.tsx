@@ -1,3 +1,5 @@
+import { ChristianCalendar } from "./christian-calendar";
+
 export default async function Home() {
   const title = 'ОХРИДСКИ ПРОЛОГ'
   const response = await fetch(`http://127.0.0.1:8000/forewords`,
@@ -15,6 +17,9 @@ export default async function Home() {
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
         <h1>{ title }</h1>
         <p>{ forewordsText[0].text }</p>
+        <div>
+          <ChristianCalendar />
+        </div>
       </div>
     </main>
   )
