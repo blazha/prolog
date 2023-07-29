@@ -9,11 +9,15 @@ type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 export function ChristianCalendar() {
-  const [value, onChange] = useState<Value>(new Date());
-
   return (
     <div>
-      <Calendar onChange={onChange} value={value} />
+      <Calendar {...commonProps} />
     </div>
   );
+}
+
+const commonProps = {
+  onChange: (value: Value) => {
+    console.log(value)
+  },
 }
