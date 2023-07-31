@@ -39,9 +39,8 @@ def read_root():
 
 @app.get("/forewords", response_model=list[schemas.Foreword])
 def read_forewords(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    forewords = crud.get_forewords(db, skip=skip, limit=limit)
-    return forewords
+    return crud.get_forewords(db, skip=skip, limit=limit)
 
-@app.get("/zitije/{month}/{day}")
-def get_zitije(month: int, day: int):
-    return {"message": f'zitije na dan {month}-{day}'}
+@app.get("/zitije/{month}/{day}", response_model=schemas.Zitije)
+def get_zitije(month: int, day: int, db: Session = Depends(get_db)):
+    return crud.get_zitije(db, month=month, day=day)
