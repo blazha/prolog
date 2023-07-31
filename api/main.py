@@ -10,6 +10,19 @@ models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
+from fastapi.middleware.cors import CORSMiddleware
+
+origins = [
+    "http://localhost:3000",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Dependency
 def get_db():
@@ -28,3 +41,7 @@ def read_root():
 def read_forewords(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     forewords = crud.get_forewords(db, skip=skip, limit=limit)
     return forewords
+
+@app.get("/zitije/{month}/{day}")
+def get_zitije(month: int, day: int):
+    return {"message": f'zitije na dan {month}-{day}'}
