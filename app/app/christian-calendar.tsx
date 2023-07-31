@@ -16,8 +16,6 @@ export function ChristianCalendar() {
 }
 
 const onDateChanged = (value: Value) => {
-  console.log("dan je " + (value as Date).getDate())
-  console.log("mesec je " + ((value as Date).getMonth() + 1))
   const day = (value as Date).getDate();
   const month = (value as Date).getMonth() + 1;
 

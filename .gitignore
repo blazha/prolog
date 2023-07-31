@@ -37,6 +37,3 @@ app/next-env.d.ts
 # python virtual enviroment
 .venv
 api/__pycache__
-
-# SQLite db file
-api/sql_app.db
