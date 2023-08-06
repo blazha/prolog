@@ -11,7 +11,7 @@ export default async function Home() {
   });
 
   const forewordsText = (await response.json()) as Foreword[];
-  console.log(forewordsText)
+  // console.log(forewordsText)
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
