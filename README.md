@@ -9,6 +9,7 @@
     - predgovor Arhimandrita Justina Popovica
     - za svaki dan u godini: zitije svetaca, rasudjivanje, sozercanje, beseda
     - pogovor i blagodarnost od oca Nikolaja
+    - izvor: https://www.delfi.rs/_img/artikli/2017/05/a156080.pdf i https://svetosavlje.org/prolog/mesecni
 
 ### Run on development enviroment:
 #### Client app
