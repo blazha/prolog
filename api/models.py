@@ -6,13 +6,13 @@ from database import Base
 class Foreword(Base):
     __tablename__ = "forewords"
 
-    id = Column(Integer, primary_key=True, index=True)
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     text = Column(String)
 
 class Zitije(Base):
     __tablename__ = "zitije"
 
-    id = Column(Integer, primary_key=True, index=True)
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     dan = Column(Integer)
     mesec = Column(Integer)
     sveci = Column(String)
