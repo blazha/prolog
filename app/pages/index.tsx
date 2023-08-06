@@ -7,6 +7,7 @@ export default function Home() {
   const [visiblePredgovor, setVisiblePredgovor] = useState<Boolean>(true);
   const [predgovor, setPredgovor] = useState<string>('');
   const title = 'ОХРИДСКИ ПРОЛОГ'
+  const hidePredgovor = () => setVisiblePredgovor(false);
 
   useEffect(() => {
     fetch(`http://127.0.0.1:8000/forewords`,
@@ -32,7 +33,7 @@ export default function Home() {
         <h1>{ title }</h1>
        { visiblePredgovor && <p>{ predgovor }</p>}
         <div>
-          <ChristianCalendar />
+          <ChristianCalendar onDateSelected={hidePredgovor}/>
         </div>
       </div>
     </main>

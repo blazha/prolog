@@ -7,7 +7,11 @@ type ValuePiece = Date | null;
 
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
-export function ChristianCalendar() {
+interface Props {
+  onDateSelected: () => void;
+}
+
+export function ChristianCalendar({onDateSelected}: Props) {
   const [zitije, setZitije] = useState<Zitije | null>(null);
 
   const onDateChanged = (value: Value) => {
@@ -25,6 +29,7 @@ export function ChristianCalendar() {
     .then(data => {
       console.log(data as Zitije)
       setZitije(data as Zitije)
+      onDateSelected()
     })
     .catch(error => {
       console.log(error)
